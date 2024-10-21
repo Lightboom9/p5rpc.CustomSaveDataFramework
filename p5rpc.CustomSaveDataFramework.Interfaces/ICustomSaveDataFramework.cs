@@ -8,7 +8,7 @@ namespace p5rpc.CustomSaveDataFramework.Interfaces;
 public interface ICustomSaveDataFramework
 {
     /// <summary>
-    /// Adds a custom save data entry. It's value will be saved when the game is saved, and written when it's loaded.
+    /// Adds a custom save data entry. Its value will be saved when the game is saved, and written when it's loaded.
     /// </summary>
     /// <param name="modId">The id of your mod, used as the id for the key/value collection of custom data.</param>
     public void AddEntry(string modId, string key, Node entry);
