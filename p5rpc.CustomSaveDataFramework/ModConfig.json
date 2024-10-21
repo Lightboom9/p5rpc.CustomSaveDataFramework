@@ -118,6 +118,10 @@
           "ReleaseMetadataName": "Reloaded.Universal.FileEmulationFramework.ReleaseMetadata.json"
         }
       }
+    },
+    "GameBanana": {
+      "ItemType": "Mod",
+      "ItemId": 550194
     }
   },
   "IsUniversalMod": false,
@@ -130,5 +134,5 @@
   "SupportedAppId": [
     "p5r.exe"
   ],
-  "ProjectUrl": ""
+  "ProjectUrl": "https://github.com/Lightboom9/p5rpc.CustomSaveDataFramework"
 }
