@@ -66,8 +66,47 @@ public class CustomSaveDataFramework : ICustomSaveDataFramework
             modNodes = new Dictionary<string, Node>();
             _nodes.Add(modId, modNodes);
         }
-        
-        modNodes.Add(key, entry);
+
+        if (modNodes.TryGetValue(key, out var oldNode))
+        {
+            if (entry.GetType() == oldNode.GetType())
+            {
+                switch (entry)
+                {
+                    case SavedInt newEntry:
+                        newEntry.value = (oldNode as SavedInt)!.value;
+                        break;
+                    case SavedByte newEntry:
+                        newEntry.value = (oldNode as SavedByte)!.value;
+                        break;
+                    case SavedShort newEntry:
+                        newEntry.value = (oldNode as SavedShort)!.value;
+                        break;
+                    case SavedLong newEntry:
+                        newEntry.value = (oldNode as SavedLong)!.value;
+                        break;
+                    case SavedFloat newEntry:
+                        newEntry.value = (oldNode as SavedFloat)!.value;
+                        break;
+                    case SavedDouble newEntry:
+                        newEntry.value = (oldNode as SavedDouble)!.value;
+                        break;
+                    case SavedString newEntry:
+                        newEntry.value = (oldNode as SavedString)!.value;
+                        break;
+                }
+                
+                modNodes[key] = entry;
+            }
+            else
+            {
+                modNodes[key] = entry;
+            }
+        }
+        else
+        {
+            modNodes.Add(key, entry);
+        }
     }
 
     public bool RemoveEntry(string modId, string key)
